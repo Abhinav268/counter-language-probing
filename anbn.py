@@ -105,7 +105,7 @@ class SmallTransformer(nn.Module):
         else:
             return output
 
-device = 'cpu'
+device = torch.device("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
 
 def evaluate_model(model, data_loader):
     model.eval()

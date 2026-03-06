@@ -16,7 +16,7 @@ MAX_LEN = 50
 BATCH_SIZE = 32
 EPOCHS = 10
 LEARNING_RATE = 0.001
-device = "mps"
+device = torch.device("cuda" if torch.cuda.is_available() else ("mps" if torch.backends.mps.is_available() else "cpu"))
 
 def load_data(file):
     N_SAMPLES = 5000
