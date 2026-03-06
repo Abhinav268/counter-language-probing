@@ -105,7 +105,7 @@ class SmallTransformer(nn.Module):
         else:
             return output
 
-device = 'mps'
+device = 'cpu'
 
 def evaluate_model(model, data_loader):
     model.eval()
